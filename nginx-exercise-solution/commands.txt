@@ -1,2 +1,14 @@
+Exercise #1 - Build an nginx docker image
+===========
+
 docker build -t nginx-dubjug .
 docker run -p 9000:80 nginx-dubjug
+
+
+
+Exercise #2 - Run two nginx docker containers and share a volumne with static assets
+===========
+mkdir ~/dev/vol/nginx-www
+cp ./
+docker run -p 9000:80 -v ~/dev/vol/nginx-www:/usr/share/nginx/html nginx
+docker run -p 9001:80 -v ~/dev/vol/nginx-www:/usr/share/nginx/html nginx
